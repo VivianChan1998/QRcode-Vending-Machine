@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 import { Redirect } from 'react-router'
 import NavBar from './NavBar';
 import Choose from './Choose'
+import Title from './Title'
 
 class Home extends Component {
     render() {
@@ -10,9 +11,10 @@ class Home extends Component {
             <div>
                 <NavBar />
                 <Switch>
-                    <Route path='/Home' render={() => (
-                        <Redirect to='/'></Redirect>
+                    <Route exact path="/" render={() => (
+                        <Redirect to='/Home'></Redirect>
                     )} />
+                    <Route path='/Home' component={Title}></Route>
                     <Route path='/Choose' component={Choose}/>
                 </Switch>
             </div>

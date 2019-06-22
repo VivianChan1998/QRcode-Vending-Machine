@@ -6,9 +6,11 @@ class GoodList extends Component {
         return (
             <ul>
                 {this.props.MyList.map( e =>
-                    <Good NAME = {e.NAME} PRICE = {e.PRICE} ></Good>
+                    <Good NAME = {e.NAME} PRICE = {e.PRICE} ID = {e.ID} ></Good>
                 )}
             </ul>
         )
     }
 }
+
+export default GoodList

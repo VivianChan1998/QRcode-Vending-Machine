@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import GoodList from '../components/GoodList'
 
 class Choose extends Component {
     constructor(props){
@@ -6,12 +7,16 @@ class Choose extends Component {
         this.state={
             goods: [
                 {
-                    NAME: 'first',
-                    PRICE: 120
+                    NAME: 'FIRST',
+                    PRICE: 120,
+                    ID: '001',
+                    ORDERED: false
                 },
                 {
                     NAME: 'SECOND',
-                    PRICE: 240
+                    PRICE: 240,
+                    ID: '002',
+                    ORDERED: false
                 }
             ]
         }
@@ -20,6 +25,7 @@ class Choose extends Component {
         return(
             <div>
                 <h1>Choose!</h1>
+                <GoodList MyList={this.state.goods} />
                 
             </div>
         )

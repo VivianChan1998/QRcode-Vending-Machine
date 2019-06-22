@@ -4,16 +4,23 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.3",
-    "debug": "~2.6.3",
+    "canvas": "^2.6.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "debug": "^2.6.9",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "jade": "^1.11.0",
+    "magic-qr-code": "^1.0.3",
     "morgan": "^1.9.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "qr-image": "^3.2.0",
+    "qrcode": "^1.3.3",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.6.1",
     "nodemon": "^1.19.1",
     "react-scripts": "1.0.10"
   },
