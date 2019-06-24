@@ -12,19 +12,19 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-//var port = normalizePort( process.env.PORT || '3001' );
-//app.set('port', port);
+var port = normalizePort( process.env.PORT || '3001' );
+app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-//var server = http.createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-
+/*
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 3001
@@ -35,10 +35,10 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render(__dirname + '/pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-//server.listen(port, '0.0.0.0');
-//server.on('error', onError);
-//server.on('listening', onListening);
+*/
+server.listen(port, '0.0.0.0');
+server.on('error', onError);
+server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -63,7 +63,7 @@ function normalizePort(val) {
 /**
  * Event listener for HTTP server "error" event.
  */
-/*
+
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -87,11 +87,11 @@ function onError(error) {
       throw error;
   }
 }
-*/
+
 /**
  * Event listener for HTTP server "listening" event.
  */
-/*
+
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
@@ -99,4 +99,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-*/
