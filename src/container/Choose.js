@@ -1,5 +1,7 @@
 import React,{Component} from 'react'
 import GoodList from '../components/GoodList'
+import '../App.css'
+import '../Choose.css'
 
 class Choose extends Component {
     constructor(props){
@@ -23,7 +25,7 @@ class Choose extends Component {
     }
     render() {
         return(
-            <div>
+            <div className='App_container'>
                 <h1>Choose!</h1>
                 <GoodList MyList={this.state.goods} />
                 

@@ -1,0 +1,19 @@
+
+.NavBar_container {
+    padding: 20px;
+}
+
+.Nav_span {
+    margin: 20px;
+    margin-top: 20px;
+}
+
+.Nav_link {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.Nav_link:hover {
+    text-decoration: underline;
+}

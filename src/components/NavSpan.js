@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
+import '../Nav.css'
 
 class NavSpan extends Component {
     constructor(props){
@@ -11,8 +12,8 @@ class NavSpan extends Component {
     }
     render() {
         return(
-            <span>
-                <NavLink to={this.state.directory}>
+            <span className="Nav_span">
+                <NavLink to={this.state.directory} className="Nav_link">
                     {this.state.text}
                 </NavLink>
             </span>

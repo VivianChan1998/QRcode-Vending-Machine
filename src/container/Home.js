@@ -4,11 +4,12 @@ import { Redirect } from 'react-router'
 import NavBar from './NavBar';
 import Choose from './Choose'
 import Title from './Title'
+import '../App.css'
 
 class Home extends Component {
     render() {
         return(
-            <div>
+            <div className="App_container">
                 <NavBar />
                 <Switch>
                     <Route exact path="/" render={() => (

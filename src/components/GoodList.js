@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Good from './Good'
+import '../Choose.css'
 
 class GoodList extends Component {
     render() {

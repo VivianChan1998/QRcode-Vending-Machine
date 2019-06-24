@@ -1,9 +1,8 @@
 import React,{Component} from 'react'
+import '../Choose.css'
+
 const uuid = require('uuid/v1');
-const QRCode = require('qrcode');
-const Canvas = require('canvas');
-const fs = require('fs');
-const qr = require('qr-image');
+
  
 
 class Good extends Component {
@@ -17,7 +16,7 @@ class Good extends Component {
 
             UserID: 123,
 
-            qr: 'no :('
+            qr: ''
         }
     }
 
@@ -27,7 +26,7 @@ class Good extends Component {
         fetch('http://'+ require("ip").address() + ':3001/api/choose?id='+this.state.ID+'&pw='+pw)
             .then(res => res.json())
             .then(res => {
-                this.setState({qr: <img src={res.img} />})
+                this.setState({qr: <div className='Choose_qrimg'><img src={res.img} /></div>})
             })
 
     }
@@ -35,12 +34,16 @@ class Good extends Component {
     render(){
         return(
             <li>
-                <h3>{this.state.NAME}</h3>
-                <h4>{this.state.PRICE}</h4>
-                <button onClick={this.handleOrderCLick}>
-                    order!
-                </button>
-                {this.state.qr}
+                <div className="Choose_info">
+                    <h3>{this.state.NAME}</h3>
+                    <h4>{this.state.PRICE}</h4>
+                    <button onClick={this.handleOrderCLick}>
+                        order!
+                    </button>
+                </div>
+                <div className="Choose_qrwrapper">
+                    {this.state.qr}
+                </div>  
             </li>
         )
     }

@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+}
+
+ li {
+    display: block;
+    margin-bottom: 40px;
+    margin-top: 40px;
+ }
+
+ .Choose_info {
+    position: relative;
+    width: 70%;
+    height: 250px;
+    float: left;
+ }
+
+ .Choose_qrwrapper {
+    position: relative;
+    width: 30%;
+    height: 250px;
+    float: right;
+
+
+    margin-top: none;
+    padding: none;
+ }
+
+ h3 {
+     font-size: 22px;
+ }
+
+ button {
+     background: none;
+     border: solid 2px;
+     border-radius: 5px;
+
+     height: 50px;
+     width: 200px;
+
+     font-size: 18px;
+ }
+
+ button:hover {
+     transition: all 0.3s;
+     border-color: white;
+     color: white;
+ }

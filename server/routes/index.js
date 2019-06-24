@@ -4,13 +4,33 @@ const fs = require('fs')
 const qr = require('qr-image');
 const QRCode = require('qrcode');
 
+const host = "140.112.77.220"
+
 router.get('/message', function(req, res, next) {
-  res.json('Welcome To React');
+  res.json('Hello:)');
 });
 
 router.get('/retrieve', function(req,res,next) {
   const id = req.query.id
-  res.send(id + ' get!' )
+  const pw = req.query.pw
+  //res.send(id + ' get!' )
+  fs.readFile(__dirname + '/data.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+        AllData = JSON.parse(data);
+        data = AllData.order[id];
+        if(data === undefined) res.send("ID ERROR")
+        else if (data.includes(pw)) {
+          console.log(":D!!!!!!!")
+          res.send(id)
+        }
+        else {
+          console.log(":(((((((")
+          res.send("PW ERROR")
+        }
+    }
+  })
 })
 
 function QRGen(pw) {
@@ -31,7 +51,10 @@ router.get('/choose', (req, res, next) => {
 
   if(!id || !pw) throw err
   
-  QRGen(pw).then( data => {
+  var link = host + ':3001/api/retrieve?id=' + id + '&pw=' + pw
+  console.log(link)
+
+  QRGen(link).then( data => {
     res.send(data)
   })
 
@@ -41,7 +64,7 @@ router.get('/choose', (req, res, next) => {
     } else {
         AllData = JSON.parse(data); //now it an object
         AllData.order[id].push(pw)
-        console.log(AllData.order)
+        //console.log(AllData.order)
         //AllData.order[id] = "https://i.imgur.com/K4sgvK1.gif"
         //console.log(id, AllData[id])
         AllDatastr = JSON.stringify(AllData, null, 4); //convert it back to json
