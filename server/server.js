@@ -39,7 +39,10 @@ express()
 server.listen(port, host);
 server.on('error', onError);
 server.on('listening', onListening);
-
+/************************** */
+// Sooooo important to take off "proxy" in package.json
+// Also adding //var host = name.herokuapp.com;
+/************************** */
 /**
  * Normalize a port into a number, string, or false.
  */
