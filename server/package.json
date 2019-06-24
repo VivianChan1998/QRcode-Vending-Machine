@@ -11,6 +11,6 @@
     "jade": "^1.11.0"
   },
   "scripts": {
-    "start": "./server.js"
+    "start": "node server/server.js"
   }
 }

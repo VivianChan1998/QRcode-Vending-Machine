@@ -12,7 +12,7 @@ class Home extends Component {
             <div className="App_container">
                 <NavBar />
                 <Switch>
-                    <Route exact path="/" render={() => (
+                    <Route exact path='/' render={() => (
                         <Redirect to='/Home'></Redirect>
                     )} />
                     <Route path='/Home' component={Title}></Route>
