@@ -31,11 +31,12 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"node server/server.js\"",
-    "build": "react-scripts build && mv build server",
-    "test": "react-scripts test --env=jsdom",
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  
   "proxy": "http://localhost:3001",
   "description": "This is a template for using Express and React in the same project. It is based on Create React App.",
   "main": "server.js",
