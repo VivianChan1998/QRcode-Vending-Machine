@@ -7,12 +7,12 @@
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
-var host = name.herokuapp.com;
+var host = '127.0.0.1';
 /**
  * Get port from environment and store in Express.
  */
 
-var port = toString(process.env.PORT) || '3001' ;
+var port = normalizePort(process.env.PORT || '3001' );
 app.set('port', port);
 
 /**
