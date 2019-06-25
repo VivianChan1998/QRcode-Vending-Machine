@@ -23,7 +23,7 @@ class Good extends Component {
     handleOrderCLick = () => {
         var pw = uuid()
         console.log(require("ip").address())
-        fetch('http://localhost:3001/api/choose?id='+this.state.ID+'&pw='+pw)
+        fetch('/api/choose?id='+this.state.ID+'&pw='+pw)
             .then(res => res.json())
             .then(res => {
                 console.log(res)
