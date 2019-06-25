@@ -7,12 +7,12 @@
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
-var host = name.herokuapp.com;
+//var host = name.herokuapp.com;
 /**
  * Get port from environment and store in Express.
  */
 
-var port = toString(process.env.PORT) || '3001' ;
+var port = process.env.PORT || '3001' ;
 app.set('port', port);
 
 /**
@@ -36,7 +36,7 @@ express()
   .get('/', (req, res) => res.render(__dirname + '/pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 */
-server.listen(port, host);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 /************************** */

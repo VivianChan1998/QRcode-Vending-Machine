@@ -55,7 +55,7 @@ router.get('/choose', (req, res, next) => {
   console.log(link)
 
   QRGen(link).then( data => {
-    res.send(data)
+    res.json(data)
   })
 
   fs.readFile(__dirname + '/data.json', 'utf8', function readFileCallback(err, data){
