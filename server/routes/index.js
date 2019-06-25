@@ -4,9 +4,10 @@ const fs = require('fs')
 const qr = require('qr-image');
 const QRCode = require('qrcode');
 
-const host = "140.112.77.220"
+const host = "140.112.77.71"
 
 router.get('/message', function(req, res, next) {
+  console.log("QQ")
   res.json('Hello:)');
 });
 

@@ -3,7 +3,8 @@
 /**
  * Module dependencies.
  */
-
+var path = require("path");
+var apppath = path.resolve(__dirname, './app.js')
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
@@ -36,7 +37,7 @@ express()
   .get('/', (req, res) => res.render(__dirname + '/pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 */
-server.listen(port, host);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
