@@ -24,7 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use('/api', index);
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile('build/index.html', { root: global });
 });
 
