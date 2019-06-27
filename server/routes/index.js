@@ -6,6 +6,8 @@ const QRCode = require('qrcode');
 
 const host = "140.112.77.71"
 
+console.log('remember to change two IPs')
+
 router.get('/message', function(req, res, next) {
   console.log("QQ")
   res.json('Hello:)');
