@@ -1,58 +1,36 @@
-# Express React Starter
+![](https://i.imgur.com/RD9gwN4.png)
 
-This is a template for using Express and React in the same project. It is based on Create React App.
 
-Read the article: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
+# QR-code Vending Machine
 
-OR...
-
-## Prerequisites
-* [create-react-app](https://github.com/facebookincubator/create-react-app)
-
-## Installing
-
-```bash
-git clone 'this-repo-url' app-name
-cd app-name
+## How to use
+```
+git clone https://github.com/VivianChan1998/QRcode-Vending-Machine.git
+cd QRcode-Vending-Machine/
 npm install
-```
-
-## Running The App
-
-The template can be run in development, or in production. For development, use the following workflow.
-
-### Start the Express Server
-
-```bash
-node server/server.js
-```
-
-### Start Create React App
-
-In a different terminal tab...
-
-```bash
 npm start
 ```
+enter `localhost:3000/` in browser
 
-![Imgur](http://i.imgur.com/f7Nlvx4.png)
+## How it is written
+Front end: React.js
+Back end: Express.js
+[RPi and Arduino Code](https://github.com/TobyChen0106/ESLabSpring2019/tree/master/Final)
 
-The "Welcome to React" is a message that comes from the Express server. 
+## How it works
+![](https://i.imgur.com/MW7xc7E.png)
+![](https://i.imgur.com/GLBLXPw.jpg)
 
-### What Is Happening Here?
+1. By pressing `order!` button, front end sends a request to server, including a specified uuid and item ID.
+2. Server saves the uuid in database, and generates a QRcode that includes the GET request(including the uuid in QRcode).
+3. Server sends the QRcode to Front end.
+4. User scans the QR-code at the machine.
+5. The vending machine sends the url in the QRcode to the server.
+6. Server compares what it reserved with the database, to assure the order exists.
+7. Server tells the machine if the order exists or not, which item id it is, and dispense the item.
 
-Create React App and the Express server are running on different processes. This is so that React can still use in memory Webpack to do hot reloads really fast.
 
-All AJAX/fetch requests to `/api` are sent back to the Express server which is serving all `/api` routes from the `routes/index.js` file. This is done via a proxy setup in the `package.json` file.
+## :)
 
-## Building For Production
 
-In production, you want Express to serve up your app.
 
-### Build React App
-
-```bash
-npm build
-```
-
-Now simply visit the Express app at 'http://localhost:3001' and you will see your app served from the 'build' folder. That's all there is to it!

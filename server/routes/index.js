@@ -4,7 +4,7 @@ const fs = require('fs')
 const qr = require('qr-image');
 const QRCode = require('qrcode');
 
-const host = "140.112.77.71"
+const host = "127.0.0.1"
 
 console.log('remember to change two IPs')
 
@@ -25,7 +25,7 @@ router.get('/retrieve', function(req,res,next) {
         data = AllData.order[id];
         if(data === undefined) res.send("ID ERROR")
         else if (data.includes(pw)) {
-          console.log(":D!!!!!!!")
+          console.log("send", id)
           res.send(id)
         }
         else {
@@ -75,7 +75,7 @@ router.get('/choose', (req, res, next) => {
             if(err) console.log(err)
             //res.send('done')
         });
-    }
+    } 
   })
 
 

@@ -3,7 +3,7 @@ import '../Choose.css'
 
 const uuid = require('uuid/v1');
 
-const host = "140.112.150.37"
+const host = "127.0.0.1"
 
 class Good extends Component {
     constructor(props) {
