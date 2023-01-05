@@ -32,7 +32,7 @@
   "devDependencies": {
     "concurrently": "^3.6.1",
     "nodemon": "^1.19.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
